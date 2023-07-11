@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between pt-0 pb-0">
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown ml-auto">
+        <a class="nav-link d-flex align-items-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-initial"><%= "#{current_user.first_name[0]}#{current_user.last_name[0]}" %></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Logout", logout_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure to logout?'}, class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+</nav>

@@ -1,0 +1,33 @@
+
+<%= render 'layouts/navbar'%>
+<%= render 'layouts/error_messages' %>
+
+<div class="d-flex">
+  <%= link_to "add", new_url_mapper_path, class: "mt-5 ml-auto mr-5 btn btn-danger" %>
+</div>
+
+<div class="px-5 mt-2">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">title</th>
+      <th scope="col">url</th>
+      <th scope="col">slug</th>
+      <th scope="col">action</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% @url_mappers.each do |url_mapper| %>
+      <tr>
+        <td><%= url_mapper.title %></td>
+        <td><%= url_mapper.url %></td>
+        <td><%= url_mapper.slug %></td>
+        <td>
+         <%= link_to "edit", edit_url_mapper_path(url_mapper), class: "btn btn-info"%>
+         <%= link_to "delete", url_mapper, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: 'Are you sure to delete?'}%>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+<div>

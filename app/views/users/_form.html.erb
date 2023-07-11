@@ -1,0 +1,63 @@
+
+<div class="page-wrapper">
+  <div class="container">
+    <h3 class="text-center text-dark pb-2"> Login</h3>
+    <div class="row">
+      <div class="offset-xl-2 col-xl-8">
+        <%=  form_for :user, url: signup_path do |f| %>
+          <div class="row mx-n1">
+            <div class="col-xl-12 px-1">
+              <div class="form-group">
+                <%= f.label :first_name, class: "label text-dark" %>
+                <%= f.text_field :first_name, required: true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-n1">
+            <div class="col-xl-12 px-1">
+              <div class="form-group">
+                <%= f.label :last_name, class: "label text-dark" %>
+                <%= f.text_field :last_name, required: true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-n1">
+            <div class="col-xl-12 px-1">
+              <div class="form-group">
+                <%= f.label :email, class: "label text-dark" %>
+                <%= f.email_field :email, autofocus: true, required: true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-n1">
+            <div class="col-xl-12 px-1">
+              <div class="form-group">
+                <%= f.label :password, class: "label text-dark" %>
+                <%= f.password_field :password, required: true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-n1">
+            <div class="col-xl-12 px-1">
+              <div class="form-group">
+                <%= f.label :password_conformation, class: "label text-dark" %>
+                <%= f.password_field :password_conformation, required: true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="text-right">
+            <button name="button" type="submit" class="btn btn-primary mt-2 btn-block">
+              signup
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
